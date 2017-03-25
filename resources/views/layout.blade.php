@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Virtual BookShelf - Code Challenge</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="#">Virtual BookShelf - Code Challenge</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -61,22 +61,16 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-md-3">
-                <p class="lead">Shop Name</p>
-                <div class="list-group">
-                    <a href="#" class="list-group-item">Category 1</a>
-                    <a href="#" class="list-group-item">Category 2</a>
-                    <a href="#" class="list-group-item">Category 3</a>
-                </div>
+    <div class="container">        
+        <div class="row">            
+            <div class="col-md-3">                
+                @include('best-selling')                 
+                @include('subjects-sidebar')                 
+                @include('authors-sidebar')                 
             </div>
 
             <div class="col-md-9">
-
-                <div class="row carousel-holder">
+            @yield('topheader','<div class="row carousel-holder">
 
                     <div class="col-md-12">
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
@@ -106,7 +100,8 @@
                     </div>
 
                 </div>
-
+')
+                
                 @yield('content')
 
             </div>

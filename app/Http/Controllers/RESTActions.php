@@ -2,16 +2,28 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-
+/**
+ * Trait for common functions related to a REST Controller
+ */
 trait RESTActions {
 
-
+    /**
+     * Get all resources
+     * 
+     * @return json data | status
+     */
     public function all()
     {
         $m = self::MODEL;
         return $this->respond(Response::HTTP_OK, $m::all());
     }
 
+    /**
+     * Get resource by id
+     * @param  integer $id resource id
+     * 
+     * @return json data | status
+     */
     public function get($id)
     {
         $m = self::MODEL;
@@ -22,6 +34,12 @@ trait RESTActions {
         return $this->respond(Response::HTTP_OK, $model);
     }
 
+    /**
+     * Add a new resource
+     * @param Request $request request with resource data
+     * 
+     * @return json data | status
+     */
     public function add(Request $request)
     {
         $m = self::MODEL;
@@ -29,6 +47,13 @@ trait RESTActions {
         return $this->respond(Response::HTTP_CREATED, $m::create($request->all()));
     }
 
+    /**
+     * Edit a resource by id
+     * @param Request $request request with resource data
+     * @param  integer $id resource id
+     * 
+     * @return json data | status
+     */
     public function put(Request $request, $id)
     {
         $m = self::MODEL;

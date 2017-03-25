@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+/**
+ * AuthorsShefController Provides the author's administration on the shelf
+ * 
+ * @author Diego Ramirez <dramirez@hydras.com.ar> 
+ */
 class AuthorsShelfController extends Controller
-{
+{    
+       
     const MODEL = "App\Author";
 
     use RESTActions;
