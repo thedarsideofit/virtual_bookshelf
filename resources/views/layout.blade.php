@@ -16,6 +16,9 @@
 
     <!-- Custom CSS -->
     <link href="css/shop-homepage.css" rel="stylesheet">
+    <!--FontAwesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,7 +32,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-fixed-top" role="navigation" style="background-color: beige;">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -39,23 +42,37 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Virtual BookShelf - Code Challenge</a>
+                <a class="navbar-brand" href="#">Virtual BookShelf - Code Challenge</a> 
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a href="/book">Books</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a href="/subject">Subjects</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="/author">Authors</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/thedarsideofit">Contact</a>
                     </li>
                 </ul>
-            </div>
+                {!! Form::open(['method'=>'GET','url'=>'book','class'=>'navbar-form navbar-left','role'=>'search'])  !!}
+               <div class="input-group custom-search-form pull-right">
+                    <input type="text" class="form-control" name="search" placeholder="Search...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default-sm" type="submit">
+                            <i class="fa fa-search"></i>                            
+                        </button>
+                    </span>
+                </div>
+                {!! Form::close() !!}
+            </div>            
             <!-- /.navbar-collapse -->
+
         </div>
         <!-- /.container -->
     </nav>
@@ -132,6 +149,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+    
 
 </body>
 

@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 /**
- * BooksShefController Provides the book's administration on the shelf
+ * SubjectsShefController Provides the author's administration on the shelf
  * 
  * @author Diego Ramirez <dramirez@hydras.com.ar> 
  */
-class BooksShelfController extends Controller
-{
-    const MODEL = "App\Book";
+class SubjectsShelfController extends Controller
+{    
+       
+    const MODEL = "App\Subject";
 
     use RESTActions;
 
@@ -22,6 +23,6 @@ class BooksShelfController extends Controller
      */
     protected function respond($status, $data = [])
     {        
-        return view('books', ['data' => $data]);
+        return view('subjects', ['data' => $data]);
     }    
 }

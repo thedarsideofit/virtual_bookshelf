@@ -29,6 +29,12 @@ $app->get('book/{id}', 'BooksShelfController@get');
 $app->get('author', 'AuthorsShelfController@all');
 $app->get('author/{id}', 'AuthorsShelfController@get');
 
+/**
+ * Shelf Routes for resource subject
+ */
+$app->get('subject', 'SubjectsShelfController@all');
+$app->get('subject/{id}', 'SubjectsShelfController@get');
+
 
 /**
  * REST Routes for resource book

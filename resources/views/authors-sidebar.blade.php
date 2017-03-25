@@ -1,6 +1,6 @@
 <p class="lead">Popular Authors</p>
 <a href="/author">
-<img src="http://www.authorhouse.co.uk/uploadedImages/AuthorHouse_UK/AuthorsInTheHouse/Our-Authors.jpg" width="260" />
+<img src="http://www.authorhouse.co.uk/uploadedImages/AuthorHouse_UK/AuthorsInTheHouse/Our-Authors.jpg" width="100%" />
 </a>
 <div class="list-group">
 @foreach ($authors as $author)
