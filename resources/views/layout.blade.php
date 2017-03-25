@@ -18,6 +18,11 @@
     <link href="css/shop-homepage.css" rel="stylesheet">
     <!--FontAwesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+    <!--Select 2 for autocomplete-->
+    <link href="/css/select2.min.css" rel="stylesheet">
+
+    @yield('stylesheets')
     
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -32,7 +37,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-fixed-top" role="navigation" style="background-color: beige;">
+    <nav class="navbar navbar-fixed-top nav-beige" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -62,7 +67,7 @@
                 </ul>
                 {!! Form::open(['method'=>'GET','url'=>'book','class'=>'navbar-form navbar-left','role'=>'search'])  !!}
                <div class="input-group custom-search-form pull-right">
-                    <input type="text" class="form-control" name="search" placeholder="Search...">
+                    <select name="books[]" class="form-control" multiple="multiple" id="books"></select>
                     <span class="input-group-btn">
                         <button class="btn btn-default-sm" type="submit">
                             <i class="fa fa-search"></i>                            
@@ -149,9 +154,38 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+    <!-- FontAwesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
+    <!--Select2 -->
+    <script src="js/select2.min.js"></script>
     
 
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // inicializamos el plugin
+            $('#books').select2({
+                // Activamos la opcion "Tags" del plugin
+                tags: true,
+                tokenSeparators: [','],
+                ajax: {
+                    dataType: 'json',
+                    url: '{{ url("book_ajax") }}',
+                    delay: 250,
+                    data: function(params) {
+                        return {
+                            term: params.term
+                        }
+                    },
+                    processResults: function (data, page) {
+                      return {
+                        results: data
+                      };
+                    },
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

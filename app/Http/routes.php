@@ -22,6 +22,7 @@ $app->get('/', function () use ($app) {
  */
 $app->get('book', 'BooksShelfController@all');
 $app->get('book/{id}', 'BooksShelfController@get');
+$app->get('book_ajax', 'BooksShelfController@allAjax');
 
 /**
  * Shelf Routes for resource author
