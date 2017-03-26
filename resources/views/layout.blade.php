@@ -89,6 +89,7 @@
                 @include('best-selling')                 
                 @include('subjects-sidebar')                 
                 @include('authors-sidebar')                 
+                @include('top-ten-artists')                 
             </div>
 
             <div class="col-md-9">
