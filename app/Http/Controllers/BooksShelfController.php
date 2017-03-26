@@ -17,6 +17,39 @@ class BooksShelfController extends Controller
 
     use RESTActions;
 
+        /**
+     * Get all resources
+     * 
+     * @return json data | status
+     */
+    public function all(Request $request)
+    {
+        $m = self::MODEL;
+        if ($request->input('books') !== null) {
+            $books = $m::whereIn('id',$request->input('books'))->get();
+        } else {
+            $books = $m::all();
+        }
+        
+        return $this->respond(Response::HTTP_OK, $books);
+    }
+
+    /**
+     * Get resource by id
+     * @param  integer $id resource id
+     * 
+     * @return json data | status
+     */
+    public function get($id)
+    {
+        $m = self::MODEL;
+        $model = $m::find($id);
+        if(is_null($model)){
+            return $this->respond(Response::HTTP_NOT_FOUND);
+        }
+        return $this->respond(Response::HTTP_OK, array($model));
+    }
+
     /**
      * Override for respond trait method
      * @param  integer status code

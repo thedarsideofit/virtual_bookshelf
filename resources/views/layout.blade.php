@@ -12,15 +12,15 @@
     <title>Virtual BookShelf - Code Challenge</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url('css/bootstrap.min.css')}}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/shop-homepage.css" rel="stylesheet">
+   <link href="{{ url('css/shop-homepage.css')}}" rel="stylesheet">
     <!--FontAwesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
 
     <!--Select 2 for autocomplete-->
-    <link href="/css/select2.min.css" rel="stylesheet">
+    <link href="{{ url('css/select2.min.css')}}" rel="stylesheet">
 
     @yield('stylesheets')
     
@@ -151,14 +151,14 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="{{url('js/jquery.js')}}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{url('js/bootstrap.min.js')}}"></script>
     <!-- FontAwesome -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></script>
     <!--Select2 -->
-    <script src="js/select2.min.js"></script>
+    <script src="{{url('js/select2.min.js')}}"></script>
     
 
 

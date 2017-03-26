@@ -4,6 +4,6 @@
 </a>
 <div class="list-group">
 @foreach ($authors as $author)
-    <a href="#" class="list-group-item">{{$author->name}}</a>   
+    <a href="{{route('author_show',array('id' => $author->id))}}" class="list-group-item">{{$author->name}}</a>  
 @endforeach   
 </div>

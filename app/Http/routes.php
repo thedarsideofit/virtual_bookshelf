@@ -20,21 +20,29 @@ $app->get('/', function () use ($app) {
 /**
  * Shelf Routes for resource book
  */
-$app->get('book', 'BooksShelfController@all');
-$app->get('book/{id}', 'BooksShelfController@get');
+$app->get('book',[
+    'as' => 'book_index', 'uses' => 'BooksShelfController@all'
+]);
+$app->get('book/{id}',[
+    'as' => 'book_show', 'uses' => 'BooksShelfController@get'
+]);
 $app->get('book_ajax', 'BooksShelfController@allAjax');
 
 /**
  * Shelf Routes for resource author
  */
 $app->get('author', 'AuthorsShelfController@all');
-$app->get('author/{id}', 'AuthorsShelfController@get');
+$app->get('author/{id}', [
+    'as' => 'author_show', 'uses' => 'AuthorsShelfController@get'
+]);
 
 /**
  * Shelf Routes for resource subject
  */
 $app->get('subject', 'SubjectsShelfController@all');
-$app->get('subject/{id}', 'SubjectsShelfController@get');
+$app->get('subject/{id}', [
+    'as' => 'subject_show', 'uses' => 'SubjectsShelfController@get'
+]);
 
 
 /**

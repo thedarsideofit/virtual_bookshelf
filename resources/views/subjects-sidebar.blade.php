@@ -4,6 +4,6 @@
 </a>
 <div class="list-group">
 @foreach ($subjects as $subject)
-    <a href="#" class="list-group-item">{{$subject->name}}</a>   
+    <a href="{{route('subject_show',array('id' => $subject->id))}}" class="list-group-item">{{$subject->name}}</a>   
 @endforeach   
 </div>
